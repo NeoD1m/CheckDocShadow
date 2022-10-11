@@ -14,7 +14,7 @@ class GreetingPage extends StatelessWidget {
               margin: EdgeInsets.only(left: 20, top: 30),
               width: 100,
               height: 100,
-              decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/leading.png"))),
+              decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/leading.png"))),
             ),
           ),
           Align(
@@ -23,7 +23,7 @@ class GreetingPage extends StatelessWidget {
               margin: EdgeInsets.only(right: 100),
               width: 550,
               height: 550,
-              decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/logo.png"), fit: BoxFit.fitWidth)),
+              decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/logo.png"), fit: BoxFit.fitWidth)),
             ),
           ),
           Column(
