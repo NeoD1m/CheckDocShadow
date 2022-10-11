@@ -14,3 +14,5 @@ Web site for CheckDoc project.
     https://medium.com/flutter-community/flutter-scalable-folder-files-structure-8f860faafebd
 
 Добавить pubspec.lock в гитигнор
+Придумать что делать с темой
+getRouter наверно не лучшее название
