@@ -16,3 +16,4 @@ Web site for CheckDoc project.
 Добавить pubspec.lock в гитигнор
 Придумать что делать с темой
 getRouter наверно не лучшее название
+разобраться с иконками
