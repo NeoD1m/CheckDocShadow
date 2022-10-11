@@ -1,5 +1,5 @@
-import 'package:checkdoc/pages/greetingPage/greetingPage.dart';
-import 'package:checkdoc/pages/uploadPage/uploadPage.dart';
+import 'package:checkdoc/pages/greeting_page/greeting_page.dart';
+import 'package:checkdoc/pages/upload_page/uploadPage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
