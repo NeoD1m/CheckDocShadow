@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-ThemeData? getTheme() {
+ThemeData? getCheckDocTheme() {
   return ThemeData(
     /// TODO добавить цветочков
     brightness: Brightness.light,

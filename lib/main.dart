@@ -11,7 +11,7 @@ class CheckDocApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
-        theme: getTheme(),
+        theme: getCheckDocTheme(),
         routerConfig: getRouter(context),
       );
 }
