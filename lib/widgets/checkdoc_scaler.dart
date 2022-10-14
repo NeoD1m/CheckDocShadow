@@ -18,6 +18,7 @@ class CheckDocScaler extends StatelessWidget {
             width: 1440,
             height: 1024,
             child: Stack(
+              clipBehavior: Clip.none,
               children: children,
             ),
           ),

@@ -1,7 +1,7 @@
 import 'package:checkdoc/pages/greeting_page/background.dart';
+import 'package:checkdoc/pages/greeting_page/begin_button.dart';
 import 'package:checkdoc/pages/greeting_page/greeting_widget.dart';
 import 'package:checkdoc/pages/greeting_page/step_row.dart';
-import 'package:checkdoc/pages/greeting_page/upload_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/checkdoc_scaler.dart';
@@ -17,7 +17,7 @@ class GreetingPage extends StatelessWidget {
           BackgroundWidget(),
           GreetingWidget(),
           StepRow(),
-          UploadButton(),
+          BeginButton(),
         ],
       ),
     );

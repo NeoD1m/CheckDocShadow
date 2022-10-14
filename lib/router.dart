@@ -5,7 +5,7 @@ import 'package:checkdoc/pages/upload_page/upload_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-GoRouter getRouter(BuildContext context){
+GoRouter getRouter(BuildContext context) {
   return GoRouter(
     routes: <GoRoute>[
       GoRoute(

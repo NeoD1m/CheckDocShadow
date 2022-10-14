@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class UploadButton extends StatelessWidget {
-  const UploadButton({Key? key}) : super(key: key);
+class BeginButton extends StatelessWidget {
+  const BeginButton({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
