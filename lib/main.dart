@@ -13,7 +13,7 @@ class CheckDocApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ResponsiveSizer(
       builder: (context, orientation, screenType) => MaterialApp.router(
-            theme: getTheme(),
+            theme: getCheckDocTheme(),
             routerConfig: getRouter(context),
           ));
 }
