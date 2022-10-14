@@ -10,12 +10,12 @@ class UploadTitleBar extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(left: 25, top: 105),
+          margin: EdgeInsets.only(left: 25, top: 105), // 24,105 - из за перекрытия кнопки далее
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(topLeft: Radius.circular(8), topRight: Radius.circular(8)),
             color: Color(0xFFF4F5F6),
           ),
-          width: 1390,
+          width: 1390, // 1392 97 - из за перекрытия кнопки далее
           height: 96,
         ),
         Container(

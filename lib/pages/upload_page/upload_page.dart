@@ -19,7 +19,7 @@ class UploadPageState extends State<UploadPage> {
       body: CheckDocScaler(
         children: [
           CheckDocAppBar(),
-          UploadBody(),
+          UploadBody(), // Перекрывал кнопку далее
           UploadTitleBar(),
           FileDrop(),
           UploadButton(),
