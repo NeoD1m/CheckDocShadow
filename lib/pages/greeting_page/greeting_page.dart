@@ -12,17 +12,20 @@ class GreetingPage extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Center(
-        child: Container(
-          //margin: EdgeInsets.only(left: (100.w - 1440.px) / 2),
-          width: 1440,
-          height: 1024,
-          child: Stack(
-            children: const [
-              BackgroundWidget(),
-              GreetingWidget(),
-              StepRow(),
-              UploadButton(),
-            ],
+        child: FittedBox(
+          fit: BoxFit.fitHeight,
+          child: Container(
+            //margin: EdgeInsets.only(left: (100.w - 1440.px) / 2),
+            width: 1440,
+            height: 1024,
+            child: Stack(
+              children: const [
+                BackgroundWidget(),
+                GreetingWidget(),
+                StepRow(),
+                UploadButton(),
+              ],
+            ),
           ),
         ),
       ),

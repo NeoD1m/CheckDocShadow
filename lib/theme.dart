@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 ThemeData? getCheckDocTheme() {
   return ThemeData(
@@ -12,7 +11,7 @@ ThemeData? getCheckDocTheme() {
 
       /// TODO добавить шрифтиков
       textTheme: TextTheme(
-        headlineLarge: GoogleFonts.roboto(textStyle: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w700, color: Colors.black)),
+        headlineLarge: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 72.0, fontWeight: FontWeight.w700, color: Colors.black)),
         headlineMedium: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 32.0, fontWeight: FontWeight.w500, color: Colors.black)),
         headlineSmall: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700, color: Colors.black)),
         bodyLarge: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, color: Colors.black)),
