@@ -10,26 +10,36 @@ class GreetingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const BackgroundWidget(),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(left: 200, top: 100),
-                child: GreetingWidget(),
-              ),
-              SizedBox(height: 100),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 200),
-                child: StepRow(),
-              ),
-              SizedBox(height: 50),
-              UploadButton(),
+      body: Center(
+        child: Container(
+          alignment: Alignment.center,
+          width: MediaQuery.of(context).size.width * 0.7,
+          child: Stack(
+            children: [
+              const BackgroundWidget(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.only(left: 200, top: 100),
+                    child: GreetingWidget(),
+                  ),
+                  SizedBox(height: 100),
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 200),
+                    child: StepRow(),
+                  ),
+                  //SizedBox(height: 50),
+
+                ],),
+                Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                        margin: EdgeInsets.only(bottom: 100),
+                        child: UploadButton())),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

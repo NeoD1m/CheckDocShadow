@@ -1,4 +1,5 @@
 import 'package:checkdoc/router.dart';
+import 'package:checkdoc/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class CheckDocApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp.router(
+        theme: getTheme(),
         routerConfig: getRouter(context),
       );
 }
