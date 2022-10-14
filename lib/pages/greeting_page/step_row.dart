@@ -5,23 +5,42 @@ class StepRow extends StatelessWidget {
   const StepRow({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Stack(
       children: const [
-        StepWidget(
-          stepTitle: "Шаг1",
-          bodyTitle: "Выберите документ",
-          bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+        Positioned(
+          left: 142,
+          child: StepWidget(
+            stepNumber: 'Шаг1',
+            bodyTitle: "Выберите документ",
+            bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+          ),
         ),
-        StepWidget(
-          stepTitle: "Шаг1",
-          bodyTitle: "Выберите документ",
-          bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+        Positioned(
+          left: 495,
+          child: StepWidget(
+            stepNumber: 'Шаг1',
+            bodyTitle: "Выберите документ",
+            bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+          ),
         ),
-        StepWidget(
-          stepTitle: "Шаг1",
-          bodyTitle: "Выберите документ",
-          bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+        Positioned(
+          left: 853,
+          child: StepWidget(
+            stepNumber: 'Шаг1',
+            bodyTitle: "Выберите документ",
+            bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+          ),
         ),
+        // StepWidget(
+        //   stepTitle: "Шаг1",
+        //   bodyTitle: "Выберите документ",
+        //   bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+        // ),
+        // StepWidget(
+        //   stepTitle: "Шаг1",
+        //   bodyTitle: "Выберите документ",
+        //   bodyText: "Проверять действие НПА стало проще, просто загрузите документы, остальное сделаем Мы",
+        // ),
       ],
     );
   }
