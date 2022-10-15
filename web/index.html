@@ -40,6 +40,12 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+<!-- Не понимаю почему, но оно вызывает окно предупреждающее пользователя о потере внесённых изменений, пока оставляем такой фикс -->
+<script>
+window.onbeforeunload = function() {
+return "Data will be lost if you leave the page, are you sure?";
+};
+</script>
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js

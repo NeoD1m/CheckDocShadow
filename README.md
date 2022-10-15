@@ -4,7 +4,8 @@ Web site for CheckDoc project.
 ## Getting Started
 
 Гайдлайн разработки:
-
+    checkdoc - без андерскоров
+    Checkdoc - 
 ## Заметки
 
 Либа для переходов по путям, стоит использовать 
