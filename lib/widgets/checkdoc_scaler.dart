@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class CheckDocScaler extends StatelessWidget {
   const CheckDocScaler({super.key, required this.children});
@@ -8,10 +7,12 @@ class CheckDocScaler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return Center(
       child: SizedBox(
-        width: 100.w,
-        height: 100.h,
+        width: width,
+        height: height,
         child: FittedBox(
           fit: BoxFit.contain,
           child: SizedBox(

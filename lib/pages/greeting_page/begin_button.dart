@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class BeginButton extends StatelessWidget {
   const BeginButton({Key? key}) : super(key: key);
@@ -8,8 +7,8 @@ class BeginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 0, top: 747),
-      width: 1440.px,
-      height: 142.px,
+      width: 1440,
+      height: 142,
       child: OutlinedButton(
         onPressed: () => context.go("/upload"),
         style: OutlinedButton.styleFrom(

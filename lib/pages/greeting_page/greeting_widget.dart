@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class GreetingWidget extends StatelessWidget {
   const GreetingWidget({Key? key}) : super(key: key);
@@ -11,8 +10,8 @@ class GreetingWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Container(
-            margin: EdgeInsets.only(left: 142.px, top: 109.px),
-            width: 568.px,
+            margin: EdgeInsets.only(left: 142, top: 109),
+            width: 568,
             child: RichText(
               text: TextSpan(
                 style: Theme.of(context).textTheme.headlineLarge,
@@ -30,9 +29,9 @@ class GreetingWidget extends StatelessWidget {
         Align(
           alignment: Alignment.topLeft,
           child: Container(
-            margin: EdgeInsets.only(left: 142.px, top: 287.px),
-            width: 565.px,
-            height: 81.px,
+            margin: EdgeInsets.only(left: 142, top: 287),
+            width: 565,
+            height: 81,
             child: RichText(
               text: TextSpan(
                 style: Theme.of(context).textTheme.bodyLarge,
