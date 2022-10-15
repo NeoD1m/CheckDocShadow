@@ -13,7 +13,7 @@ class StepWidget extends StatelessWidget {
       alignment: Alignment.topLeft,
       children: [
         Container(
-          margin: EdgeInsets.only(left: 0, top: 468),
+          margin: const EdgeInsets.only(left: 0, top: 468),
           width: 97,
           height: 48,
           child: Text(
@@ -22,7 +22,7 @@ class StepWidget extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(left: 8, top: 537),
+          margin: const EdgeInsets.only(left: 8, top: 537),
           width: 154,
           height: 24,
           child: Text(
@@ -31,7 +31,7 @@ class StepWidget extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(left: 8, top: 569),
+          margin: const EdgeInsets.only(left: 8, top: 569),
           width: 191,
           height: 85,
           child: Text(
@@ -40,13 +40,13 @@ class StepWidget extends StatelessWidget {
           ),
         ),
         Container(
-          margin: EdgeInsets.only(left: 142, top: 529),
-          padding: EdgeInsets.all(16),
+          margin: const EdgeInsets.only(left: 142, top: 529),
+          padding: const EdgeInsets.all(16),
           width: 307,
           height: 175,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            children: const [
               SizedBox(height: 10),
             ],
           ),

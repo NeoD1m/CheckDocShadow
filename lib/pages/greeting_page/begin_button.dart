@@ -6,7 +6,7 @@ class BeginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 0, top: 747),
+      margin: const EdgeInsets.only(left: 0, top: 747),
       width: 1440,
       height: 142,
       child: OutlinedButton(

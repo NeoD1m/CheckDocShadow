@@ -17,6 +17,9 @@ dependencies:
   responsive_sizer: ^3.1.1
   google_fonts: ^3.0.1
   dotted_border: ^2.0.0+2
+  flutter_svg: ^1.1.5
+
+  # надеюсь не понадобится
   get: ^4.6.1
 
 dev_dependencies:

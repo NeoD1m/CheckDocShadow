@@ -7,7 +7,7 @@ class FileDrop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 534 + 39, top: 602 + 31),
+      margin: const EdgeInsets.only(left: 534 + 39, top: 602 + 31),
       width: 256,
       height: 42,
       child: RichText(
