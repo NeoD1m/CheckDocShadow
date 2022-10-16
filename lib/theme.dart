@@ -8,6 +8,8 @@ ThemeData? getCheckDocTheme() {
       brightness: Brightness.light,
       primaryColor: const Color(0xFF3272C0),
       fontFamily: 'Roboto',
+      scaffoldBackgroundColor: Colors.white,
+      backgroundColor: Colors.white,
 
       /// TODO добавить шрифтиков
       textTheme: TextTheme(
@@ -16,6 +18,7 @@ ThemeData? getCheckDocTheme() {
         headlineSmall: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w700, color: Colors.black)),
         bodyLarge: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.w500, color: Colors.black)),
         bodyMedium: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 14.0, fontWeight: FontWeight.w400, color: Colors.black)),
+        bodySmall: GoogleFonts.roboto(textStyle: const TextStyle(fontSize: 12.0, fontWeight: FontWeight.w400, color: Colors.black)),
       ),
       appBarTheme: const AppBarTheme(elevation: 0.0, color: Colors.white));
 }

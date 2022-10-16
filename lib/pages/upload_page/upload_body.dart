@@ -11,12 +11,6 @@ class UploadBody extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 24, top: 104),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: Colors.black)),
-          width: 1392,
-          height: 747,
-        ),
-        Container(
           margin: const EdgeInsets.only(left: 504, top: 217),
           //decoration: BoxDecoration(image: DecorationImage(image: AssetImage("assets/images/logo.png"))),
           width: 403,

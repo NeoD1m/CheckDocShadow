@@ -1,15 +1,24 @@
+import 'package:checkdoc/pages/date_selection_page/date_body.dart';
+import 'package:checkdoc/pages/date_selection_page/date_title_bar.dart';
+import 'package:checkdoc/widgets/check_doc_appbar.dart';
+import 'package:checkdoc/widgets/upload_border.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-class DateSelectionPage extends StatelessWidget{
-    const DateSelectionPage({Key? key}) : super(key: key);
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold(
-          body: Container(
-            color: Colors.red,
-            child: ElevatedButton(onPressed: () => context.go("/result"), child: Text("Получить результат"),),
-          ),
-        );
-    }
+import '../../widgets/checkdoc_scaler.dart';
+
+class DateSelectionPage extends StatelessWidget {
+  const DateSelectionPage({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: CheckDocScaler(
+        children: [
+          CheckDocAppBar(),
+          UploadBorder(), // Перекрывал кнопку далее
+          DateTitleBar(),
+          DateBody(),
+        ],
+      ),
+    );
+  }
 }

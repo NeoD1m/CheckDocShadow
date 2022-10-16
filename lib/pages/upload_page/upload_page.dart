@@ -4,6 +4,7 @@ import 'package:checkdoc/pages/upload_page/upload_button.dart';
 import 'package:checkdoc/pages/upload_page/upload_title_bar.dart';
 import 'package:checkdoc/widgets/check_doc_appbar.dart';
 import 'package:checkdoc/widgets/checkdoc_scaler.dart';
+import 'package:checkdoc/widgets/upload_border.dart';
 import 'package:flutter/material.dart';
 
 class UploadPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class UploadPageState extends State<UploadPage> {
       body: CheckDocScaler(
         children: [
           CheckDocAppBar(),
+          UploadBorder(),
           UploadBody(), // Перекрывал кнопку далее
           UploadTitleBar(),
           FileDrop(),

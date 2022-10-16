@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NextButton extends StatelessWidget {
-  const NextButton({Key? key}) : super(key: key);
+class PreviousButton extends StatelessWidget {
+  const PreviousButton({Key? key, required this.path}) : super(key: key);
+
+  final String path;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 1271, top: 128),
+      margin: EdgeInsets.only(left: 48, top: 128),
       width: 116,
       height: 48,
       child: OutlinedButton(
@@ -19,23 +21,23 @@ class NextButton extends StatelessWidget {
           disabledBackgroundColor: Color(0xFF222222).withOpacity(0.10),
         ),
         onPressed: () {
-          context.go('/date');
+          context.go(path);
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Icon(Icons.arrow_left_rounded, color: Color(0xFF3272C0).withOpacity(0.62)), // #222222 - если отключена
             SizedBox(
               width: 53,
               height: 24,
               child: Text(
-                "Далее",
+                "Назад",
                 style: GoogleFonts.roboto(
                     textStyle: Theme.of(context).textTheme.bodyMedium,
                     color: Color(0xFF3272C0).withOpacity(0.62),
                     fontSize: 18), // #222222 - если отключена
               ),
             ),
-            Icon(Icons.arrow_right_rounded, color: Color(0xFF3272C0).withOpacity(0.62)), // #222222 - если отключена
           ],
         ),
       ),
