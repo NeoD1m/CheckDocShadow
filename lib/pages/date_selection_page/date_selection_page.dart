@@ -12,13 +12,13 @@ class DateSelectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: CheckDocScaler(
-        children: [
-          CheckDocAppBar(),
-          UploadBorder(), // Перекрывал кнопку далее
-          DateTitleBar(),
-          DateBody(),
-        ],
-      ),
+          children: [
+            CheckDocAppBar(),
+            UploadBorder(), // Перекрывал кнопку далее
+            DateTitleBar(),
+            DateBody(),
+          ]
+      )
     );
   }
 }
