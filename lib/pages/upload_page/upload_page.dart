@@ -7,6 +7,7 @@ import 'package:checkdoc/widgets/checkdoc_scaler.dart';
 import 'package:checkdoc/widgets/upload_border.dart';
 import 'package:flutter/material.dart';
 
+import '../../constant.dart';
 import '../../utils/backend.dart';
 
 class UploadPage extends StatefulWidget {
@@ -22,7 +23,7 @@ class UploadPageState extends State<UploadPage> {
       body: FutureBuilder(
         future: createTaskOnBackend(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          if (snapshot.connectionState == ConnectionState.done && !snapshot.hasError){
+          if ((snapshot.connectionState == ConnectionState.done && !snapshot.hasError) || isBackDisabled){
             return const CheckDocScaler(
                 children: [
                   CheckDocAppBar(),
