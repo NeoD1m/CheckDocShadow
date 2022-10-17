@@ -35,10 +35,13 @@ class ResultDocStatus extends StatelessWidget {
           child: SizedBox(
             width: 128,
             height: 20,
-            child: Text(
-              '${quantity.toString()} $title',
-              style: GoogleFonts.roboto(
-                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
+            child: FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                '${quantity.toString()} $title',
+                style: GoogleFonts.roboto(
+                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
+                ),
               ),
             ),
           ),

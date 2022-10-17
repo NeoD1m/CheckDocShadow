@@ -19,10 +19,6 @@ dependencies:
   dotted_border: ^2.0.0+2
   flutter_svg: ^1.1.5
 
-  # надеюсь не понадобится
-  # аналог go_router
-  get: ^4.6.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

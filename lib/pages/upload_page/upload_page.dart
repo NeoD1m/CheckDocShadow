@@ -25,7 +25,7 @@ class UploadPageState extends State<UploadPage> {
         future: createTaskOnBackend(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if ((snapshot.connectionState == ConnectionState.done && !snapshot.hasError) || isBackDisabled) {
-            return const CheckDocScaler(
+            return CheckDocScaler(
               children: [
                 CheckDocAppBar(),
                 UploadBorder(),

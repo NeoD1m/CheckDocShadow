@@ -10,15 +10,15 @@ class PreviousButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 48, top: 128),
+      margin: const EdgeInsets.only(left: 48, top: 128),
       width: 116,
       height: 48,
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          side: BorderSide(color: Colors.transparent),
+          side: const BorderSide(color: Colors.transparent),
           backgroundColor: Colors.transparent,
           padding: EdgeInsets.zero,
-          disabledBackgroundColor: Color(0xFF222222).withOpacity(0.10),
+          disabledBackgroundColor: const Color(0xFF222222).withOpacity(0.10),
         ),
         onPressed: () {
           context.go(path);
@@ -26,7 +26,7 @@ class PreviousButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.arrow_left_rounded, color: Color(0xFF3272C0).withOpacity(0.62)), // #222222 - если отключена
+            Icon(Icons.arrow_left_rounded, color: const Color(0xFF3272C0).withOpacity(0.62)), // #222222 - если отключена
             SizedBox(
               width: 53,
               height: 24,
@@ -34,7 +34,7 @@ class PreviousButton extends StatelessWidget {
                 "Назад",
                 style: GoogleFonts.roboto(
                     textStyle: Theme.of(context).textTheme.bodyMedium,
-                    color: Color(0xFF3272C0).withOpacity(0.62),
+                    color: const Color(0xFF3272C0).withOpacity(0.62),
                     fontSize: 18), // #222222 - если отключена
               ),
             ),
