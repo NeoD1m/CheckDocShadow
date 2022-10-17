@@ -4,7 +4,6 @@ class CheckDocScaler extends StatelessWidget {
   const CheckDocScaler({super.key, required this.children});
 
   final List<Widget> children;
-
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
