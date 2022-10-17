@@ -17,19 +17,6 @@ class ResultCardState extends State<ResultCard> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          margin: const EdgeInsets.only(left: 1232, top: 16),
-          width: 24,
-          height: 24,
-          child: IconButton(
-            onPressed: () {
-              setState(() {
-                _isOpen = !_isOpen;
-              });
-            },
-            icon: Icon(Icons.keyboard_arrow_down_rounded),
-          ),
-        ),
         AnimatedContainer(
           duration: const Duration(milliseconds: 100),
           margin: const EdgeInsets.only(bottom: 129 - 113),
@@ -75,6 +62,20 @@ class ResultCardState extends State<ResultCard> {
                 ResultDocDividers(),
               ],
             ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 1244, top: 16),
+          width: 24,
+          height: 24,
+          child: IconButton(
+            padding: EdgeInsets.zero,
+            onPressed: () {
+              setState(() {
+                _isOpen = !_isOpen;
+              });
+            },
+            icon: Icon(_isOpen ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded),
           ),
         ),
       ],

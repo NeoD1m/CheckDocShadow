@@ -45,10 +45,11 @@ class DocumentReportDateState extends State<DocumentReportDate> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 112 - 12, top: 16 - 12), // 12 - это падинг
+            margin: const EdgeInsets.only(left: 112 - 12 + 6, top: 16 - 12 + 6), // 12 - это падинг
             width: 24,
             height: 24,
             child: IconButton(
+              padding: EdgeInsets.zero,
               onPressed: () {},
               icon: const Icon(
                 Icons.calendar_today,
