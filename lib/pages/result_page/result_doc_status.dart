@@ -28,21 +28,20 @@ class ResultDocStatus extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(left: offset, top: 14.5),
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          width: 152,
+          //padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          width: 162,
           height: 36,
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: color)),
-          child: SizedBox(
-            width: 128,
-            height: 20,
-            child: FittedBox(
-              fit: BoxFit.fitWidth,
-              child: Text(
-                '${quantity.toString()} $title',
-                style: GoogleFonts.roboto(
-                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
-                ),
-              ),
+        ),
+        Container(
+          margin: EdgeInsets.only(left: offset + 12, top: 14.5 + 10),
+          width: 138,
+          height: 20,
+          child: Text(
+            '${quantity.toString()} $title',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.roboto(
+              textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
             ),
           ),
         ),

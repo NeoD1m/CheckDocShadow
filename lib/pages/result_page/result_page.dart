@@ -8,10 +8,10 @@ class ResultPage extends StatelessWidget {
   const ResultPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CheckDocScaler(
         children: [
-          CheckDocAppBar(),
+          const CheckDocAppBar(),
           ResultBody(),
         ],
       ),
