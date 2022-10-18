@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,6 +9,7 @@ class UploadBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DropzoneViewController controller;
     return Stack(
       children: [
         Container(
@@ -39,9 +41,20 @@ class UploadBody extends StatelessWidget {
             padding: EdgeInsets.zero,
             strokeWidth: 1,
             dashPattern: const [12.2, 165 / 13],
-            child: const SizedBox(
+            child: SizedBox(
               width: 333,
               height: 148,
+              child: DropzoneView(
+                operation: DragOperation.copy,
+                cursor: CursorType.grab,
+                onCreated: (DropzoneViewController ctrl) => controller = ctrl,
+                onLoaded: () => print('Zone loaded'),
+                onError: (String? ev) => print('Error: $ev'),
+                onHover: () => print('Zone hovered'),
+                onDrop: (dynamic ev) => print('Drop: $ev'),
+                //onDropMultiple: (List<dynamic> ev) => print('Drop multiple: ${ev}'), // TODO Пофиксить нул чек
+                onLeave: () => print('Zone left'),
+              ),
             ),
           ),
         ),
