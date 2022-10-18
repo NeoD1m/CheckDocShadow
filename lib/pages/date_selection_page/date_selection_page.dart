@@ -1,5 +1,5 @@
-import 'package:checkdoc/pages/date_selection_page/date_body.dart';
-import 'package:checkdoc/pages/date_selection_page/date_title_bar.dart';
+import 'package:checkdoc/pages/date_selection_page/widgets/date_body.dart';
+import 'package:checkdoc/pages/date_selection_page/widgets/date_title_bar.dart';
 import 'package:checkdoc/widgets/upload_border.dart';
 import 'package:flutter/material.dart';
 

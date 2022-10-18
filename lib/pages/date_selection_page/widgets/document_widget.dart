@@ -1,8 +1,8 @@
-import 'package:checkdoc/pages/date_selection_page/document_date.dart';
-import 'package:checkdoc/pages/date_selection_page/document_report_date.dart';
+import 'package:checkdoc/pages/date_selection_page/widgets/document_date.dart';
+import 'package:checkdoc/pages/date_selection_page/widgets/document_report_date.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/document_info.dart';
+import '../../../widgets/document_info.dart';
 
 class DocumentWidget extends StatefulWidget {
   const DocumentWidget({Key? key}) : super(key: key);

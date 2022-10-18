@@ -1,4 +1,4 @@
-import 'package:checkdoc/pages/result_page/result_card.dart';
+import 'package:checkdoc/pages/result_page/widgets/result_card.dart';
 import 'package:flutter/material.dart';
 
 class ResultBody extends StatefulWidget {

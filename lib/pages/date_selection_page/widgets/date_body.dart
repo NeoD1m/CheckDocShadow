@@ -1,4 +1,4 @@
-import 'package:checkdoc/pages/date_selection_page/document_widget.dart';
+import 'package:checkdoc/pages/date_selection_page/widgets/document_widget.dart';
 import 'package:flutter/material.dart';
 
 class DateBody extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:checkdoc/pages/greeting_page/step_widget.dart';
+import 'package:checkdoc/pages/greeting_page/widgets/step_widget.dart';
 import 'package:flutter/material.dart';
 
 class StepRow extends StatelessWidget {

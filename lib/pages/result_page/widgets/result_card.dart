@@ -1,6 +1,6 @@
-import 'package:checkdoc/pages/result_page/result_doc_content.dart';
-import 'package:checkdoc/pages/result_page/result_doc_dividers.dart';
-import 'package:checkdoc/pages/result_page/result_doc_status.dart';
+import 'package:checkdoc/pages/result_page/widgets/result_doc_content.dart';
+import 'package:checkdoc/pages/result_page/widgets/result_doc_dividers.dart';
+import 'package:checkdoc/pages/result_page/widgets/result_doc_status.dart';
 import 'package:checkdoc/widgets/document_info.dart';
 import 'package:flutter/material.dart';
 
