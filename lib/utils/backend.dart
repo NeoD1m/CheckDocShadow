@@ -6,9 +6,9 @@ import '../constant.dart';
 
 // TODO пофиксить проблемы с CORS
 Future<dynamic> createTaskOnBackend() async {
-  developer.log("[BACKEND] Task created");
+  developer.log("[createTaskOnBackend] Starting...");
 
-  return await http.post(
+  Future<http.Response> ret = http.post(
     Uri.parse('$apiUrl/tasks'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
@@ -16,6 +16,8 @@ Future<dynamic> createTaskOnBackend() async {
     },
     body: jsonEncode(<String, String>{}),
   );
+  ret.whenComplete(() => developer.log("[createTaskOnBackend] Finished"));
+  return ret;
 }
 
 Future<dynamic> uploadFileToBackend() async {

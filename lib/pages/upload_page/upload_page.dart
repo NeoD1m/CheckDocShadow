@@ -23,14 +23,14 @@ class UploadPageState extends State<UploadPage> {
       body: FutureBuilder(
         future: createTaskOnBackend(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          if ((snapshot.connectionState == ConnectionState.done && !snapshot.hasError) || isBackDisabled) {
+          if ((snapshot.connectionState == ConnectionState.done && !snapshot.hasError) || isBackendDisabled) {
             return CheckDocScaler(
               children: [
-                CheckDocAppBar(),
-                UploadBorder(),
-                UploadBody(), // Перекрывал кнопку далее
-                UploadTitleBar(),
-                FileDrop(),
+                const CheckDocAppBar(),
+                const UploadBorder(),
+                const UploadBody(), // Перекрывал кнопку далее
+                const UploadTitleBar(),
+                const FileDrop(),
                 UploadButton(),
               ],
             );
