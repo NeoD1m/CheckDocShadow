@@ -14,6 +14,7 @@ class CheckDocAppBar extends StatelessWidget {
       width: 190,
       height: 68,
       child: TextButton(
+        style: TextButton.styleFrom(foregroundColor: Theme.of(context).primaryColor),
         onPressed: () => context.go("/"),
         child: Stack(
           children: [
