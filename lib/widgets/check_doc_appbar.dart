@@ -10,7 +10,7 @@ class CheckDocAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topLeft,
-      margin: EdgeInsets.only(left: 24, top: 8),
+      margin: const EdgeInsets.only(left: 24, top: 8),
       width: 190,
       height: 68,
       child: TextButton(

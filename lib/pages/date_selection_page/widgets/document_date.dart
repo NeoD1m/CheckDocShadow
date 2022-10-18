@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DocumentDate extends StatefulWidget {
-  const DocumentDate({Key? key}) : super(key: key);
+  const DocumentDate({Key? key, required this.title, required this.offset}) : super(key: key);
+  const DocumentDate.docDate({super.key})
+      : title = 'Дата документа',
+        offset = 0;
+  const DocumentDate.reportDate({super.key})
+      : title = 'Отчетная дата',
+        offset = 184;
+
+  final String title;
+  final double offset;
+
   @override
   State<DocumentDate> createState() => DocumentDateState();
 }
@@ -11,7 +21,7 @@ class DocumentDateState extends State<DocumentDate> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 365, top: 0),
+      margin: EdgeInsets.only(left: 365 + widget.offset, top: 0),
       width: 160,
       height: 68,
       padding: const EdgeInsets.all(12),
@@ -27,7 +37,7 @@ class DocumentDateState extends State<DocumentDate> {
             width: 92,
             height: 16,
             child: Text(
-              'Дата документа',
+              widget.title,
               style: GoogleFonts.roboto(
                 textStyle: Theme.of(context).textTheme.bodySmall,
               ),
@@ -49,6 +59,9 @@ class DocumentDateState extends State<DocumentDate> {
             width: 24,
             height: 24,
             child: IconButton(
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               padding: EdgeInsets.zero,
               onPressed: () {},
               icon: const Icon(

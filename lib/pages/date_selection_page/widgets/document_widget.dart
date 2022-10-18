@@ -1,8 +1,6 @@
 import 'package:checkdoc/pages/date_selection_page/widgets/document_date.dart';
-import 'package:checkdoc/pages/date_selection_page/widgets/document_report_date.dart';
+import 'package:checkdoc/widgets/document_info.dart';
 import 'package:flutter/material.dart';
-
-import '../../../widgets/document_info.dart';
 
 class DocumentWidget extends StatefulWidget {
   const DocumentWidget({Key? key}) : super(key: key);
@@ -29,8 +27,8 @@ class DocumentWidgetState extends State<DocumentWidget> {
               onPressed: () {},
             ),
           ),
-          const DocumentDate(),
-          const DocumentReportDate(),
+          const DocumentDate.docDate(),
+          const DocumentDate.reportDate(),
         ],
       ),
     );
