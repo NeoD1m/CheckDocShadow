@@ -3,7 +3,10 @@ import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DocumentInfo extends StatelessWidget {
-  const DocumentInfo({Key? key}) : super(key: key);
+  const DocumentInfo({Key? key, required this.name, required this.date}) : super(key: key);
+
+  final String name;
+  final String date;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class DocumentInfo extends StatelessWidget {
           width: 277,
           height: 42,
           child: Text(
-            "Мы надеемся, что название файла может быть немного короче, а не вот эти три строчки",
+            name,
             style: GoogleFonts.roboto(
               textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12),
             ),
@@ -31,7 +34,7 @@ class DocumentInfo extends StatelessWidget {
           width: 277,
           height: 15,
           child: Text(
-            "150мб, 02.02.2022, 17:45",
+            date,
             style: GoogleFonts.roboto(
               textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: const Color(0xFF8D8D8D)),
             ),

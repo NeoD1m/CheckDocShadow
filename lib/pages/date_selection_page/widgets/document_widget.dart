@@ -15,7 +15,10 @@ class DocumentWidgetState extends State<DocumentWidget> {
       margin: const EdgeInsets.only(bottom: 56),
       child: Stack(
         children: [
-          const DocumentInfo(),
+          const DocumentInfo(
+            name: 'Мы надеемся, что название файла может быть немного короче, а не вот эти три строчки',
+            date: '150мб, 02.02.2022, 17:45',
+          ),
           Container(
             margin: const EdgeInsets.only(left: 0 + 309, top: 0),
             width: 24,
