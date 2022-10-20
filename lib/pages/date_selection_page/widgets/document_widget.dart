@@ -1,8 +1,6 @@
 import 'package:checkdoc/pages/date_selection_page/widgets/document_date.dart';
-import 'package:checkdoc/pages/date_selection_page/widgets/document_report_date.dart';
+import 'package:checkdoc/widgets/document_info.dart';
 import 'package:flutter/material.dart';
-
-import '../../../widgets/document_info.dart';
 
 class DocumentWidget extends StatefulWidget {
   const DocumentWidget({Key? key}) : super(key: key);
@@ -17,7 +15,10 @@ class DocumentWidgetState extends State<DocumentWidget> {
       margin: const EdgeInsets.only(bottom: 56),
       child: Stack(
         children: [
-          const DocumentInfo(),
+          const DocumentInfo(
+            name: 'Мы надеемся, что название файла может быть немного короче, а не вот эти три строчки',
+            date: '150мб, 02.02.2022, 17:45',
+          ),
           Container(
             margin: const EdgeInsets.only(left: 0 + 309, top: 0),
             width: 24,
@@ -29,8 +30,8 @@ class DocumentWidgetState extends State<DocumentWidget> {
               onPressed: () {},
             ),
           ),
-          const DocumentDate(),
-          const DocumentReportDate(),
+          const DocumentDate.docDate(),
+          const DocumentDate.reportDate(),
         ],
       ),
     );

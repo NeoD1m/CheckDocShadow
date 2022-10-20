@@ -26,7 +26,10 @@ class ResultCardState extends State<ResultCard> {
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: Colors.black)),
             child: Stack(
               children: const [
-                DocumentInfo(),
+                DocumentInfo(
+                  name: 'Мы надеемся, что название файла может быть немного короче, а не вот эти три строчки',
+                  date: '150мб, 02.02.2022, 17:45',
+                ),
                 ResultDocStatus.valid(quantity: 47),
                 ResultDocStatus.unknown(quantity: 5),
                 ResultDocStatus.invalid(quantity: 3),

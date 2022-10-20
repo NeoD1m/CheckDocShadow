@@ -1,2 +1,2 @@
 const String apiUrl = "http://localhost:8050";
-const bool isBackendDisabled = false;
+const bool isBackendDisabled = true;

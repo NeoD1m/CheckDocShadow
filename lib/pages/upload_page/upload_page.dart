@@ -1,7 +1,9 @@
 import 'package:checkdoc/constant.dart';
+import 'package:checkdoc/pages/upload_page/widgets/doc_upload_status.dart';
 import 'package:checkdoc/pages/upload_page/widgets/file_drop.dart';
 import 'package:checkdoc/pages/upload_page/widgets/upload_body.dart';
 import 'package:checkdoc/pages/upload_page/widgets/upload_button.dart';
+import 'package:checkdoc/pages/upload_page/widgets/upload_status_popup.dart';
 import 'package:checkdoc/pages/upload_page/widgets/upload_title_bar.dart';
 import 'package:checkdoc/utils/backend.dart';
 import 'package:checkdoc/widgets/check_doc_appbar.dart';
@@ -52,6 +54,15 @@ class UploadPageState extends State<UploadPage> {
                     const UploadTitleBar(),
                     const FileDrop(),
                     UploadButton(),
+                    const UploadStatusPopup(
+                      progressPercent: 70,
+                      children: [
+                        DocUploadStatus(
+                          progressPercent: 15,
+                          fileName: 'Мы надеемся, что название файла может быть немного короче, а не вот эти три строчки',
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ],

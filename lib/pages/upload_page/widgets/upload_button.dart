@@ -9,13 +9,11 @@ class UploadButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 534 + 39 + 35, top: 602 + 31 + 50),
+      margin: const EdgeInsets.only(left: 534 + 39 + 35, top: 602 + 31 + 50),
       width: 186,
       height: 48,
       child: OutlinedButton(
-        style: OutlinedButton.styleFrom(
-            backgroundColor: Color(0xFF3272C0).withOpacity(0.9),
-            padding: EdgeInsets.zero),
+        style: OutlinedButton.styleFrom(backgroundColor: const Color(0xFF3272C0).withOpacity(0.9), padding: EdgeInsets.zero),
         onPressed: () async {
           final events = await controller.pickFiles();
           if (events.isEmpty) return;
@@ -24,16 +22,13 @@ class UploadButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.add, color: Colors.white),
+            const Icon(Icons.add, color: Colors.white),
             SizedBox(
               width: 132,
               height: 24,
               child: Text(
                 "загрузить файл",
-                style: GoogleFonts.roboto(
-                    textStyle: Theme.of(context).textTheme.bodyMedium,
-                    color: Colors.white,
-                    fontSize: 18),
+                style: GoogleFonts.roboto(textStyle: Theme.of(context).textTheme.bodyMedium, color: Colors.white, fontSize: 18),
               ),
             ),
           ],
@@ -68,4 +63,24 @@ class UploadButton extends StatelessWidget {
   }
 }
 
+class File_Data_Model {
+  final String name;
+  final String mime;
+  final int bytes;
+  final String url;
 
+  File_Data_Model(
+      {required this.name,
+      required this.mime,
+      required this.bytes,
+      required this.url});
+
+  String get size {
+    final kb = bytes / 1024;
+    final mb = kb / 1024;
+
+    return mb > 1
+        ? '${mb.toStringAsFixed(2)} MB'
+        : '${kb.toStringAsFixed(2)} KB';
+  }
+}
