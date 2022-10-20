@@ -28,7 +28,6 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
 
   Widget collapsed() {
     return Container(
-      //margin: const EdgeInsets.only(left: 923 + 24, top: 297 + 104),
       child: Stack(
         children: [
           Container(
@@ -49,6 +48,17 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
                   height: 82,
                   color: const Color(0xFF3272C0),
                 ),
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 24, top: 29),
+            width: 247, //92
+            height: 24,
+            child: Text(
+              'Загрузка ${widget.progressPercent.toString()}%',
+              style: GoogleFonts.roboto(
+                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
               ),
             ),
           ),
@@ -91,7 +101,6 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
 
   Widget expanded() {
     return Container(
-      //margin: const EdgeInsets.only(left: 923 + 24, top: 297 + 104),
       child: Stack(
         children: [
           Container(
@@ -122,7 +131,7 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
             child: Text(
               'Загрузка ${widget.progressPercent.toString()}%',
               style: GoogleFonts.roboto(
-                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16,fontWeight: FontWeight.w500, color: Colors.white),
+                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
               ),
             ),
           ),
