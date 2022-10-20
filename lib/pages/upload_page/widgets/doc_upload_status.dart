@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:checkdoc/widgets/document_info.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DocUploadStatus extends StatefulWidget {
   const DocUploadStatus({Key? key, required this.progressPercent, required this.fileName}) : super(key: key);
@@ -49,7 +52,20 @@ class DocUploadStatusState extends State<DocUploadStatus> {
             padding: EdgeInsets.zero,
             icon: const Icon(Icons.close),
             color: Theme.of(context).primaryColor,
-            onPressed: () {}, // TODO Удаление из очереди загрузки
+            onPressed: () {
+              log('[TODO] Удаление из очереди загрузки');
+            }, // TODO Удаление из очереди загрузки
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 28 + 238, top: 46),
+          width: 39,
+          height: 19,
+          child: Text(
+            '${widget.progressPercent.toString()}%',
+            style: GoogleFonts.roboto(
+              textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16, color: const Color(0xFF3272C0)),
+            ),
           ),
         ),
       ],

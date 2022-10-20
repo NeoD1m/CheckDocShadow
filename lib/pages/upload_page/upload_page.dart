@@ -35,7 +35,7 @@ class UploadPageState extends State<UploadPage> {
                 const FileDrop(),
                 UploadButton(),
                 const UploadStatusPopup(
-                  progressPercent: 70,
+                  progressPercent: 30,
                   children: [
                     DocUploadStatus(
                       progressPercent: 15,
