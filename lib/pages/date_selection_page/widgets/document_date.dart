@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'calendar_widget.dart';
+
 class DocumentDate extends StatefulWidget {
   const DocumentDate({Key? key, required this.title, required this.offset}) : super(key: key);
   const DocumentDate.docDate({super.key})
@@ -18,9 +20,14 @@ class DocumentDate extends StatefulWidget {
 }
 
 class DocumentDateState extends State<DocumentDate> {
+  GlobalKey key = GlobalKey();
+  double y = 0;
+  double x = 0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: key,
       margin: EdgeInsets.only(left: 365 + widget.offset, top: 0),
       width: 160,
       height: 68,
@@ -63,7 +70,21 @@ class DocumentDateState extends State<DocumentDate> {
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               padding: EdgeInsets.zero,
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
+                    Offset position = box.localToGlobal(Offset.zero); //this is global position
+                    y = position.dy; //this is y - I think it's what you want
+                    x = position.dx; //this is x - I think it's what you want
+                    print('X: ${x + widget.offset + 365}, Y: $y');
+                    return CalendarWidget(posX: x + widget.offset, posY: y);
+                    //return CalendarWidget();
+                  },
+                  barrierColor: null,
+                );
+              },
               icon: const Icon(
                 Icons.calendar_today,
                 color: Color(0xFFAAABAD),

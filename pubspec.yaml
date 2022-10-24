@@ -18,6 +18,7 @@ dependencies:
   google_fonts: ^3.0.1
   dotted_border: ^2.0.0+2
   flutter_svg: ^1.1.5
+  syncfusion_flutter_datepicker: ^20.3.50
 
 dev_dependencies:
   flutter_test:

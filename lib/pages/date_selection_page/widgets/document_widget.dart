@@ -12,7 +12,7 @@ class DocumentWidgetState extends State<DocumentWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 56),
+      margin: const EdgeInsets.only(top: 24, bottom: 32),
       child: Stack(
         children: [
           const DocumentInfo(

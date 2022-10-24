@@ -11,7 +11,6 @@ import 'package:checkdoc/widgets/checkdoc_scaler.dart';
 import 'package:checkdoc/widgets/upload_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
-import 'dart:io';
 
 class UploadPage extends StatefulWidget {
   const UploadPage({Key? key}) : super(key: key);
@@ -43,8 +42,8 @@ class UploadPageState extends State<UploadPage> {
                   // change UI when user hover file on dropzone
                   //onHover:() => setState(()=> highlight = true),
                   //onLeave: ()=> setState(()=>highlight = false),
-                  onLoaded: ()=> print('Zone Loaded'),
-                  onError: (err)=> print('run when error found : $err'),
+                  onLoaded: () => print('Zone Loaded'),
+                  onError: (err) => print('run when error found : $err'),
                 ),
                 CheckDocScaler(
                   children: [
@@ -55,7 +54,7 @@ class UploadPageState extends State<UploadPage> {
                     const FileDrop(),
                     UploadButton(),
                     const UploadStatusPopup(
-                      progressPercent: 70,
+                      progressPercent: 30,
                       children: [
                         DocUploadStatus(
                           progressPercent: 15,
@@ -73,6 +72,7 @@ class UploadPageState extends State<UploadPage> {
       ),
     );
   }
+
   Future UploadedFile(dynamic event) async {
     // this method is called when user drop the file in drop area in flutter
 
@@ -91,10 +91,10 @@ class UploadPageState extends State<UploadPage> {
 
     // update the data model with recent file uploaded
     final droppedFile = FileDataModel(name: name, mime: mime, bytes: byte, url: url);
-    uploadFileToBackend(taskId: 1,filename: name,data: bytes);
+    uploadFileToBackend(taskId: 1, filename: name, data: bytes);
   }
-
 }
+
 // dropZone => add new loadingWidget(fileData) => in loadingWidget start uploadFileToBackend => in loadingWidget display progress
 class FileDataModel {
   final String name;
@@ -102,18 +102,12 @@ class FileDataModel {
   final int bytes;
   final String url;
 
-  FileDataModel(
-      {required this.name,
-        required this.mime,
-        required this.bytes,
-        required this.url});
+  FileDataModel({required this.name, required this.mime, required this.bytes, required this.url});
 
   String get size {
     final kb = bytes / 1024;
     final mb = kb / 1024;
 
-    return mb > 1
-        ? '${mb.toStringAsFixed(2)} MB'
-        : '${kb.toStringAsFixed(2)} KB';
+    return mb > 1 ? '${mb.toStringAsFixed(2)} MB' : '${kb.toStringAsFixed(2)} KB';
   }
 }
