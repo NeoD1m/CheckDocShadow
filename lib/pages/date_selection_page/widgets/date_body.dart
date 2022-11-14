@@ -1,9 +1,11 @@
 import 'package:checkdoc/pages/date_selection_page/widgets/document_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+
+import 'calendar/calendar_picker.dart';
 
 class DateBody extends StatelessWidget {
-  const DateBody({Key? key}) : super(key: key);
+  const DateBody({Key? key, required this.testKey}) : super(key: key);
+  final GlobalKey<CalendarPickerState> testKey;
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +31,28 @@ class DateBody extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          margin: const EdgeInsets.only(left: 686 + 24, top: 225),
-          padding: const EdgeInsets.all(40),
-          width: 682,
-          height: 488,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Color(0xFFF9FAFB),
-          ),
-          child: SfDateRangePicker(
-            enableMultiView: true,
-            showNavigationArrow: true,
-            showActionButtons: true,
-            confirmText: 'ЗАКРЫТЬ',
-            cancelText: 'СБРОСИТЬ ДАТЫ',
-            selectionShape: DateRangePickerSelectionShape.circle,
-            selectionMode: DateRangePickerSelectionMode.multiRange,
-          ),
+        // Container(
+        //   margin: const EdgeInsets.only(left: 686 + 24, top: 225),
+        //   //padding: const EdgeInsets.all(40),
+        //   width: 682,
+        //   height: 488,
+        //   decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(8),
+        //     color: const Color(0xFFF9FAFB),
+        //   ),
+        //   child: Align(
+        //     alignment: Alignment.topLeft,
+        //     child: CalendarPicker(
+        //       key: testKey,
+        //       firstAllowedDate: DateTime.now().subtract(const Duration(days: 300)),
+        //       lastAllowedDate: DateTime.now().add(const Duration(days: 300)),
+        //     ),
+        //   ),
+        // ),
+        CalendarPicker(
+          key: testKey,
+          firstAllowedDate: DateTime.now().subtract(const Duration(days: 300)),
+          lastAllowedDate: DateTime.now().add(const Duration(days: 300)),
         ),
       ],
     );

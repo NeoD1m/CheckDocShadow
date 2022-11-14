@@ -1,18 +1,18 @@
 import 'package:checkdoc/widgets/checkdoc_scaler.dart';
 import 'package:flutter/material.dart';
 
-class CalendarWidget extends StatefulWidget {
-  const CalendarWidget({Key? key, required this.posX, required this.posY}) : super(key: key);
+class SingleDatePicker extends StatefulWidget {
+  const SingleDatePicker({Key? key, required this.posX, required this.posY}) : super(key: key);
   //const CalendarWidget({Key? key}) : super(key: key);
 
   final double posX;
   final double posY;
 
   @override
-  State<CalendarWidget> createState() => CalendarWidgetState();
+  State<SingleDatePicker> createState() => SingleDatePickerState();
 }
 
-class CalendarWidgetState extends State<CalendarWidget> {
+class SingleDatePickerState extends State<SingleDatePicker> {
   @override
   Widget build(BuildContext context) {
     return CheckDocScaler(
