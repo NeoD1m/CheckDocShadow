@@ -30,8 +30,14 @@ class DocumentWidgetState extends State<DocumentWidget> {
               onPressed: () {},
             ),
           ),
-          const DocumentDate.docDate(),
-          const DocumentDate.reportDate(),
+          Container(
+            margin: const EdgeInsets.only(left: 365, top: 0),
+            child: const DocumentDate.docDate(),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 365, top: 0),
+            child: const DocumentDate.reportDate(),
+          ),
         ],
       ),
     );

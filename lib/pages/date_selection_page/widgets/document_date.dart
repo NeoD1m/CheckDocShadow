@@ -4,16 +4,35 @@ import 'package:google_fonts/google_fonts.dart';
 import 'single_date_picker.dart';
 
 class DocumentDate extends StatefulWidget {
-  const DocumentDate({Key? key, required this.title, required this.offset}) : super(key: key);
+  const DocumentDate({Key? key, required this.title, required this.offset, required this.width, required this.buttonOffset, this.onTap}) : super(key: key);
   const DocumentDate.docDate({super.key})
       : title = 'Дата документа',
-        offset = 0;
+        offset = 0,
+        width = 160,
+        buttonOffset = 112,
+        onTap = null;
   const DocumentDate.reportDate({super.key})
       : title = 'Отчетная дата',
-        offset = 184;
+        offset = 184,
+        width = 150,
+        buttonOffset = 102,
+        onTap = null;
+  const DocumentDate.docCalendar({super.key, required this.onTap})
+      : title = 'Дата документа',
+        offset = 0,
+        width = 160,
+        buttonOffset = 112;
+  const DocumentDate.reportCalendar({super.key, required this.onTap})
+      : title = 'Отчетная дата',
+        offset = 184,
+        width = 150,
+        buttonOffset = 102;
 
   final String title;
   final double offset;
+  final double width;
+  final double buttonOffset;
+  final VoidCallback? onTap;
 
   @override
   State<DocumentDate> createState() => DocumentDateState();
@@ -28,8 +47,8 @@ class DocumentDateState extends State<DocumentDate> {
   Widget build(BuildContext context) {
     return Container(
       key: key,
-      margin: EdgeInsets.only(left: 365 + widget.offset, top: 0),
-      width: 160,
+      margin: EdgeInsets.only(left: widget.offset, top: 0),
+      width: widget.width,
       height: 68,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -62,7 +81,7 @@ class DocumentDateState extends State<DocumentDate> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 112 - 12 + 6, top: 16 - 12 + 6), // 12 - это падинг
+            margin: EdgeInsets.only(left: widget.buttonOffset - 12 + 6, top: 16 - 12 + 6), // 12 - это падинг
             width: 24,
             height: 24,
             child: IconButton(
@@ -71,19 +90,23 @@ class DocumentDateState extends State<DocumentDate> {
               highlightColor: Colors.transparent,
               padding: EdgeInsets.zero,
               onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (context) {
-                    RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
-                    Offset position = box.localToGlobal(Offset.zero); //this is global position
-                    y = position.dy; //this is y - I think it's what you want
-                    x = position.dx; //this is x - I think it's what you want
-                    print('X: ${x + widget.offset + 365}, Y: $y');
-                    return SingleDatePicker(posX: x + widget.offset, posY: y);
-                    //return CalendarWidget();
-                  },
-                  barrierColor: null,
-                );
+                if (widget.onTap == null) {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
+                      Offset position = box.localToGlobal(Offset.zero); //this is global position
+                      y = position.dy; //this is y - I think it's what you want
+                      x = position.dx; //this is x - I think it's what you want
+                      print('X: ${x + widget.offset + 365}, Y: $y');
+                      return SingleDatePicker(posX: x + widget.offset, posY: y);
+                      //return CalendarWidget();
+                    },
+                    barrierColor: null,
+                  );
+                } else {
+                  widget.onTap!();
+                }
               },
               icon: const Icon(
                 Icons.calendar_today,
