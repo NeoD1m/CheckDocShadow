@@ -94,12 +94,12 @@ class DocumentDateState extends State<DocumentDate> {
                   showDialog(
                     context: context,
                     builder: (context) {
-                      RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
-                      Offset position = box.localToGlobal(Offset.zero); //this is global position
-                      y = position.dy; //this is y - I think it's what you want
-                      x = position.dx; //this is x - I think it's what you want
-                      print('X: ${x + widget.offset + 365}, Y: $y');
-                      return SingleDatePicker(posX: x + widget.offset, posY: y);
+                      // RenderBox box = key.currentContext?.findRenderObject() as RenderBox;
+                      // Offset position = box.localToGlobal(Offset.zero); //this is global position
+                      // y = position.dy; //this is y - I think it's what you want
+                      // x = position.dx; //this is x - I think it's what you want
+                      // print('X: ${x + widget.offset + 365}, Y: $y');
+                      return SingleDatePicker(posX: 468, posY: 225);
                       //return CalendarWidget();
                     },
                     barrierColor: null,

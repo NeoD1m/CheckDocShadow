@@ -59,13 +59,15 @@ class CalendarPickerState extends State<CalendarPicker> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 315, top: 400),
-            width: 158,
+            margin: const EdgeInsets.only(left: 16, top: 100),
+            width: 383,
             height: 48,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  //TODO Обновить даты всем документам
+                },
                 child: Text(
-                  "Сбросить Даты",
+                  "Применить для всех",
                   style: GoogleFonts.roboto(textStyle: Theme.of(context).textTheme.bodyMedium, color: Color(0xFF3272C0), fontSize: 18),
                 )),
           ),
@@ -122,9 +124,11 @@ class CalendarPickerState extends State<CalendarPicker> {
             width: 158,
             height: 48,
             child: TextButton(
-                onPressed: () {},
+                onPressed: () => setState(() {
+                      currentPeriod = DatePeriod(DateTime.now(), DateTime.now());
+                    }),
                 child: Text(
-                  "Сбросить Даты",
+                  "Сбросить даты",
                   style: GoogleFonts.roboto(textStyle: Theme.of(context).textTheme.bodyMedium, color: Color(0xFF3272C0), fontSize: 18),
                 )),
           ),
@@ -133,7 +137,13 @@ class CalendarPickerState extends State<CalendarPicker> {
             width: 153,
             height: 48,
             child: OutlinedButton(
-              style: OutlinedButton.styleFrom(backgroundColor: const Color(0xFF3272C0).withOpacity(0.9), padding: EdgeInsets.zero),
+              style: OutlinedButton.styleFrom(
+                backgroundColor: const Color(0xFF3272C0).withOpacity(0.9),
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+              ),
               onPressed: () => setState(() {
                 isExpanded = false;
               }),
