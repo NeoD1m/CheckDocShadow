@@ -24,6 +24,9 @@ class UploadPageState extends State<UploadPage> {
   // a variable just to update UI color when user hover or leave the drop zone
   bool highlight = false;
 
+  // DEBUG
+  double sliderValue = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +48,16 @@ class UploadPageState extends State<UploadPage> {
                   onLoaded: () => print('Zone Loaded'),
                   onError: (err) => print('run when error found : $err'),
                 ),
+                Slider(
+                  value: sliderValue,
+                  onChanged: (newValue) {
+                    setState(() {
+                      sliderValue = newValue.toInt().toDouble();
+                    });
+                  },
+                  divisions: 100,
+                  max: 100,
+                ),
                 CheckDocScaler(
                   children: [
                     const CheckDocAppBar(),
@@ -53,8 +66,8 @@ class UploadPageState extends State<UploadPage> {
                     const UploadTitleBar(),
                     const FileDrop(),
                     UploadButton(),
-                    const UploadStatusPopup(
-                      progressPercent: 30,
+                    UploadStatusPopup(
+                      progressPercent: sliderValue,
                       children: [
                         DocUploadStatus(
                           progressPercent: 15,

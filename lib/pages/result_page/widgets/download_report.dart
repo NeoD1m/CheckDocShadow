@@ -23,6 +23,7 @@ class DownloadReport extends StatelessWidget {
               child: Icon(
                 Icons.download,
                 size: 24,
+                color: Color(0xFF3272C0),
               ),
             ),
             Container(

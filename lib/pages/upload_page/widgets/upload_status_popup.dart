@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:checkdoc/widgets/gradient_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +17,45 @@ class UploadStatusPopup extends StatefulWidget {
 class UploadStatusPopupState extends State<UploadStatusPopup> {
   bool isCollapsed = false;
   double currentPosition = 297; // 297/665 - открыт/закрыт
+
+  List<double> getColorDownload() {
+    int firstPoint = 5;
+    int lastPoint = 28;
+
+    double sigmaPercent = 0;
+    if (widget.progressPercent <= firstPoint) sigmaPercent = 0;
+    if (widget.progressPercent >= lastPoint) sigmaPercent = 100;
+    if (widget.progressPercent > firstPoint && widget.progressPercent < lastPoint) {
+      sigmaPercent = (widget.progressPercent - firstPoint) / 100 * 1.78;
+    }
+    return [sigmaPercent, sigmaPercent + 0.001];
+  }
+
+  List<double> getColorCollapse(double offset) {
+    int firstPoint = 67;
+    int lastPoint = 87;
+
+    double sigmaPercent = 0;
+    if (widget.progressPercent <= firstPoint) sigmaPercent = 0;
+    if (widget.progressPercent >= lastPoint) sigmaPercent = 100;
+    if (widget.progressPercent > firstPoint && widget.progressPercent < lastPoint) {
+      sigmaPercent = (widget.progressPercent - firstPoint) / 100 * offset;
+    }
+    return [sigmaPercent, sigmaPercent + 0.001];
+  }
+
+  List<double> getColorIcon() {
+    int firstPoint = 90;
+    int lastPoint = 94;
+
+    double sigmaPercent = 0;
+    if (widget.progressPercent <= firstPoint) sigmaPercent = 0;
+    if (widget.progressPercent >= lastPoint) sigmaPercent = 100;
+    if (widget.progressPercent > firstPoint && widget.progressPercent < lastPoint) {
+      sigmaPercent = (widget.progressPercent - firstPoint) / 100 * 20;
+    }
+    return [sigmaPercent, sigmaPercent + 0.001];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +89,16 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
             margin: const EdgeInsets.only(left: 24, top: 29),
             width: 247, //92
             height: 24,
-            child: Text(
-              'Загрузка ${widget.progressPercent.toString()}%',
-              style: GoogleFonts.roboto(
-                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.white),
+            child: ProgressGradient(
+              gradient: LinearGradient(
+                colors: [Colors.white, Color(0xFF3272C0)],
+                stops: getColorDownload(),
+              ),
+              child: Text(
+                'Загрузка ${widget.progressPercent.toString()}%',
+                style: GoogleFonts.roboto(
+                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 16, fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ),
@@ -60,13 +106,19 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
             margin: const EdgeInsets.only(left: 295 + 108, top: 23 + 6),
             width: 24,
             height: 24,
-            child: IconButton(
-              padding: EdgeInsets.zero,
-              icon: const Icon(Icons.close),
-              color: Theme.of(context).primaryColor,
-              onPressed: () {
-                log('[TODO] Удаление всех файлов из очереди загрузки');
-              },
+            child: ProgressGradient(
+              gradient: LinearGradient(
+                colors: [Colors.white, Color(0xFF3272C0)],
+                stops: getColorIcon(),
+              ),
+              child: IconButton(
+                padding: EdgeInsets.zero,
+                icon: const Icon(Icons.close),
+                color: Theme.of(context).primaryColor,
+                onPressed: () {
+                  log('[TODO] Удаление всех файлов из очереди загрузки');
+                },
+              ),
             ),
           ),
           isCollapsed ? collapsed() : expanded(),
@@ -89,13 +141,19 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
                 isCollapsed = false;
                 setState(() {});
               },
-              child: Text(
-                'РАЗВЕРНУТЬ',
-                style: GoogleFonts.roboto(
-                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFF3272C0),
-                      ),
+              child: ProgressGradient(
+                gradient: LinearGradient(
+                  colors: [Colors.white, Color(0xFF3272C0)],
+                  stops: getColorCollapse(5),
+                ),
+                child: Text(
+                  'РАЗВЕРНУТЬ',
+                  style: GoogleFonts.roboto(
+                    textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xFF3272C0),
+                        ),
+                  ),
                 ),
               ),
             ),
@@ -129,13 +187,19 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
                 isCollapsed = true;
                 setState(() {});
               },
-              child: Text(
-                'СВЕРНУТЬ',
-                style: GoogleFonts.roboto(
-                  textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                        fontWeight: FontWeight.w500,
-                        color: const Color(0xFF3272C0),
-                      ),
+              child: ProgressGradient(
+                gradient: LinearGradient(
+                  colors: [Colors.white, Color(0xFF3272C0)],
+                  stops: getColorCollapse(6),
+                ),
+                child: Text(
+                  'СВЕРНУТЬ',
+                  style: GoogleFonts.roboto(
+                    textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: const Color(0xFF3272C0),
+                        ),
+                  ),
                 ),
               ),
             ),
