@@ -16,7 +16,7 @@ class UploadStatusPopup extends StatefulWidget {
 
 class UploadStatusPopupState extends State<UploadStatusPopup> {
   bool isCollapsed = false;
-  double currentPosition = 297; // 297/665 - открыт/закрыт
+  double currentPosition = 297; // 297/664 - открыт/закрыт
 
   List<double> getColorDownload() {
     int firstPoint = 5;
@@ -183,7 +183,7 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
             height: 36,
             child: TextButton(
               onPressed: () {
-                currentPosition = 665;
+                currentPosition = 664;
                 isCollapsed = true;
                 setState(() {});
               },
