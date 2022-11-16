@@ -48,16 +48,16 @@ class UploadPageState extends State<UploadPage> {
                   onLoaded: () => print('Zone Loaded'),
                   onError: (err) => print('run when error found : $err'),
                 ),
-                Slider(
-                  value: sliderValue,
-                  onChanged: (newValue) {
-                    setState(() {
-                      sliderValue = newValue.toInt().toDouble();
-                    });
-                  },
-                  divisions: 100,
-                  max: 100,
-                ),
+                // Slider(
+                //   value: sliderValue,
+                //   onChanged: (newValue) {
+                //     setState(() {
+                //       sliderValue = newValue.toInt().toDouble();
+                //     });
+                //   },
+                //   divisions: 100,
+                //   max: 100,
+                // ),
                 CheckDocScaler(
                   children: [
                     const CheckDocAppBar(),
