@@ -1,3 +1,4 @@
+import 'package:checkdoc/pages/result_page/widgets/download_report.dart';
 import 'package:checkdoc/pages/result_page/widgets/result_doc_content.dart';
 import 'package:checkdoc/pages/result_page/widgets/result_doc_dividers.dart';
 import 'package:checkdoc/pages/result_page/widgets/result_doc_status.dart';
@@ -33,6 +34,7 @@ class ResultCardState extends State<ResultCard> {
                 ResultDocStatus.valid(quantity: 47),
                 ResultDocStatus.unknown(quantity: 5),
                 ResultDocStatus.invalid(quantity: 3),
+                DownloadReport(),
                 ResultDocContent(),
                 ResultDocDividers(),
               ],
@@ -50,7 +52,11 @@ class ResultCardState extends State<ResultCard> {
                 _isOpen = !_isOpen;
               });
             },
-            icon: Icon(_isOpen ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded),
+            icon: Icon(
+              _isOpen ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded,
+              color: Color(0xFF3272C0),
+              size: 24,
+            ),
           ),
         ),
       ],
