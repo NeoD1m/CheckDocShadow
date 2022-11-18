@@ -87,6 +87,7 @@ class DocumentDateState extends State<DocumentDate> {
                 // TODO Установить дату [date]
                 dev.log('Установить дату - [$date]');
               },
+              cursorColor: Theme.of(context).primaryColor,
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: '${DateTime.now().day}.${DateTime.now().month}.${DateTime.now().year}',
@@ -96,6 +97,7 @@ class DocumentDateState extends State<DocumentDate> {
               ),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^[\.0-9]*$')),
+                LengthLimitingTextInputFormatter(10),
                 //FilteringTextInputFormatter.allow(RegExp(r'^\s*(3[01]|[12][0-9]|0?[1-9])\.(1[012]|0?[1-9])\.((?:19|20)\d{2})\s*$')),
               ],
               style: GoogleFonts.roboto(
