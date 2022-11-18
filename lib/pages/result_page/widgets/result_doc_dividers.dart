@@ -92,11 +92,11 @@ class ResultDocDividers extends StatelessWidget {
                         ),
                       ),
                     ),
-                    TableCell(
+                    const TableCell(
                       verticalAlignment: TableCellVerticalAlignment.middle,
                       child: ResultDocTableStatus.valid(),
                     ),
-                    TableCell(
+                    const TableCell(
                       verticalAlignment: TableCellVerticalAlignment.middle,
                       child: ResultDocTableStatus.no(),
                     ),

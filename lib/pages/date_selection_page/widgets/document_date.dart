@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'single_date_picker.dart';
@@ -71,10 +72,28 @@ class DocumentDateState extends State<DocumentDate> {
           ),
           Container(
             margin: const EdgeInsets.only(left: 0, top: 20),
-            width: 81,
+            width: 85, //81
             height: 24,
-            child: Text(
-              '23.03.2019',
+            // child: Text(
+            //   '23.03.2019',
+            //   style: GoogleFonts.roboto(
+            //     textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16, color: const Color(0xFFB1B9C3)),
+            //   ),
+            // ),
+            child: TextField(
+              onSubmitted: (date) {
+                // TODO Установить дату [date]
+              },
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: '${DateTime.now().day}.${DateTime.now().month}.${DateTime.now().year}',
+                hintStyle: GoogleFonts.roboto(
+                  textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16, color: const Color(0xFFB1B9C3)),
+                ),
+              ),
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(RegExp(r'^[\.0-9]*$')),
+              ],
               style: GoogleFonts.roboto(
                 textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16, color: const Color(0xFFB1B9C3)),
               ),
