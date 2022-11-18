@@ -1,3 +1,5 @@
+import 'dart:developer' as dev;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -83,6 +85,7 @@ class DocumentDateState extends State<DocumentDate> {
             child: TextField(
               onSubmitted: (date) {
                 // TODO Установить дату [date]
+                dev.log('Установить дату - [$date]');
               },
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -93,6 +96,7 @@ class DocumentDateState extends State<DocumentDate> {
               ),
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'^[\.0-9]*$')),
+                //FilteringTextInputFormatter.allow(RegExp(r'^\s*(3[01]|[12][0-9]|0?[1-9])\.(1[012]|0?[1-9])\.((?:19|20)\d{2})\s*$')),
               ],
               style: GoogleFonts.roboto(
                 textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 16, color: const Color(0xFFB1B9C3)),
