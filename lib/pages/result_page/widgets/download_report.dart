@@ -7,7 +7,7 @@ class DownloadReport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 1050 - 16, top: 14.5),
+      margin: const EdgeInsets.only(left: 1050 - 16, top: 14.5 + 24),
       width: 180,
       height: 36,
       child: TextButton(

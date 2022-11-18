@@ -10,37 +10,40 @@ class DocumentInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          margin: const EdgeInsets.only(left: 0, top: 0), // 48, 226
-          width: 24,
-          height: 34,
-          child: SvgPicture.asset("assets/images/doc_icon.svg"),
-        ),
-        Container(
-          margin: const EdgeInsets.only(left: 0 + 28, top: 0),
-          width: 277,
-          height: 42,
-          child: Text(
-            name,
-            style: GoogleFonts.roboto(
-              textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12),
+    return Container(
+      margin: const EdgeInsets.only(left: 24, top: 24, bottom: 24),
+      child: Stack(
+        children: [
+          Container(
+            margin: const EdgeInsets.only(left: 0, top: 0), // 48, 226
+            width: 24,
+            height: 34,
+            child: SvgPicture.asset("assets/images/doc_icon.svg"),
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 0 + 28, top: 0),
+            width: 277,
+            height: 42,
+            child: Text(
+              name,
+              style: GoogleFonts.roboto(
+                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(fontSize: 12),
+              ),
             ),
           ),
-        ),
-        Container(
-          margin: const EdgeInsets.only(left: 0 + 28, top: 0 + 46),
-          width: 277,
-          height: 15,
-          child: Text(
-            date,
-            style: GoogleFonts.roboto(
-              textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: const Color(0xFF8D8D8D)),
+          Container(
+            margin: const EdgeInsets.only(left: 0 + 28, top: 0 + 46),
+            width: 277,
+            height: 15,
+            child: Text(
+              date,
+              style: GoogleFonts.roboto(
+                textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(color: const Color(0xFF8D8D8D)),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -24,28 +24,31 @@ class ResultDocStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          margin: EdgeInsets.only(left: offset, top: 14.5),
-          //padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          width: 162,
-          height: 36,
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: color)),
-        ),
-        Container(
-          margin: EdgeInsets.only(left: offset + 12, top: 14.5 + 10),
-          width: 138,
-          height: 20,
-          child: Text(
-            '${quantity.toString()} $title',
-            textAlign: TextAlign.center,
-            style: GoogleFonts.roboto(
-              textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 24),
+      child: Stack(
+        children: [
+          Container(
+            margin: EdgeInsets.only(left: offset, top: 14.5),
+            //padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            width: 162,
+            height: 36,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), border: Border.all(color: color)),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: offset + 12, top: 14.5 + 10),
+            width: 138,
+            height: 20,
+            child: Text(
+              '${quantity.toString()} $title',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.roboto(
+                textStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(color: color),
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:checkdoc/pages/date_selection_page/widgets/calendar/calendar_picker.dart';
 import 'package:checkdoc/pages/date_selection_page/widgets/date_body.dart';
 import 'package:checkdoc/pages/date_selection_page/widgets/date_title_bar.dart';
 import 'package:checkdoc/widgets/upload_border.dart';
@@ -11,15 +10,13 @@ class DateSelectionPage extends StatelessWidget {
   const DateSelectionPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: CheckDocScaler(
         children: [
           CheckDocAppBar(),
           UploadBorder(), // Перекрывал кнопку далее
           DateTitleBar(),
-          DateBody(
-            testKey: GlobalKey<CalendarPickerState>(),
-          ),
+          DateBody(),
         ],
       ),
     );

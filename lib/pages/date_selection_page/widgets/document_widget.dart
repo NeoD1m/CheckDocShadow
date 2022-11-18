@@ -12,7 +12,7 @@ class DocumentWidgetState extends State<DocumentWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 24, bottom: 32),
+      margin: const EdgeInsets.only(top: 24 - 24, bottom: 32 - 24),
       child: Stack(
         children: [
           const DocumentInfo(
@@ -20,7 +20,7 @@ class DocumentWidgetState extends State<DocumentWidget> {
             date: '150мб, 02.02.2022, 17:45',
           ),
           Container(
-            margin: const EdgeInsets.only(left: 0 + 309, top: 0),
+            margin: const EdgeInsets.only(left: 24 + 309, top: 24),
             width: 24,
             height: 24,
             child: IconButton(
@@ -31,11 +31,11 @@ class DocumentWidgetState extends State<DocumentWidget> {
             ),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 365, top: 0),
+            margin: const EdgeInsets.only(left: 365 + 24, top: 24),
             child: const DocumentDate.docDate(),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 365, top: 0),
+            margin: const EdgeInsets.only(left: 365 + 24, top: 24),
             child: const DocumentDate.reportDate(),
           ),
         ],

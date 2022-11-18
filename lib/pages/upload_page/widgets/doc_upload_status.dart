@@ -24,7 +24,7 @@ class DocUploadStatusState extends State<DocUploadStatus> {
           date: '',
         ),
         Container(
-          margin: const EdgeInsets.only(left: 28, top: 46 + 15),
+          margin: const EdgeInsets.only(left: 28 + 24, top: 46 + 15 + 24),
           width: 234,
           height: 4,
           decoration: BoxDecoration(
@@ -45,7 +45,7 @@ class DocUploadStatusState extends State<DocUploadStatus> {
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 0 + 309, top: 0),
+          margin: const EdgeInsets.only(left: 24 + 309, top: 24),
           width: 24,
           height: 24,
           child: IconButton(
@@ -58,7 +58,7 @@ class DocUploadStatusState extends State<DocUploadStatus> {
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 28 + 238, top: 46),
+          margin: const EdgeInsets.only(left: 24 + 28 + 238, top: 24 + 46),
           width: 39,
           height: 19,
           child: Text(

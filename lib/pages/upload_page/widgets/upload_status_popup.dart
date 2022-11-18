@@ -169,7 +169,7 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
         children: [
           Container(
             margin: const EdgeInsets.only(left: 0, top: 0 + 82),
-            padding: const EdgeInsets.all(24),
+            //padding: const EdgeInsets.all(24),
             width: 451,
             height: 267,
             color: Colors.transparent,
@@ -189,7 +189,7 @@ class UploadStatusPopupState extends State<UploadStatusPopup> {
               },
               child: ProgressGradient(
                 gradient: LinearGradient(
-                  colors: [Colors.white, Color(0xFF3272C0)],
+                  colors: const [Colors.white, Color(0xFF3272C0)],
                   stops: getColorCollapse(6),
                 ),
                 child: Text(

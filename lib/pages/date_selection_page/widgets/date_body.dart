@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'calendar/calendar_picker.dart';
 
 class DateBody extends StatelessWidget {
-  const DateBody({Key? key, required this.testKey}) : super(key: key);
-  final GlobalKey<CalendarPickerState> testKey;
+  const DateBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          margin: const EdgeInsets.only(left: 48, top: 225 - (121 - 97)),
+          margin: const EdgeInsets.only(left: 24, top: 225 - (121 - 97)),
           width: 780,
           height: 649,
           child: ClipRect(
@@ -50,7 +49,6 @@ class DateBody extends StatelessWidget {
         //   ),
         // ),
         CalendarPicker(
-          key: testKey,
           firstAllowedDate: DateTime.now().subtract(const Duration(days: 300)),
           lastAllowedDate: DateTime.now().add(const Duration(days: 300)),
         ),
